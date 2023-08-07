@@ -1,0 +1,15 @@
+<h1>ユーザー情報</h1>
+
+<table>
+  <% @movie.each do |mv| %>
+    <tr>
+      <td><%= mv.name %></td>
+      <td><%= mv.year %></td>
+      <td><%= mv.description %></td>
+      <td><%= mv.image_url %></td>
+      <td><%= mv.is_showing %></td>
+      <td><%= mv.created_at %></td>
+      <td><%= mv.updated_at %></td>
+    </tr>
+  <% end %>
+</table>
