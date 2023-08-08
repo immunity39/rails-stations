@@ -1,18 +1,20 @@
-<h1>ユーザー情報 index</h1>
+<h1>ユーザー情報 admin</h1>
 
 <table>
   <tr>
-    <td>映画タイトル</td>
-    <td>公開年度</td>
+    <td>id</td>
+    <td>タイトル</td>
+    <td>公開年</td>
     <td>概要</td>
     <td>画像URL</td>
-    <td>上映状況</td>
-    <td>公開日時</td>
+    <td>上映中</td>
+    <td>登録日時</td>
     <td>更新日時</td>
   </tr>
 
   <% @movie.each do |mv| %>
     <tr>
+      <td><%= mv.id %><td>
       <td><%= mv.name %></td>
       <td><%= mv.year %></td>
       <td><%= mv.description %></td>
