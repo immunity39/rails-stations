@@ -1,14 +1,8 @@
 <h1>新規登録</h1>
 
 <%= form_with model: @movie, url: {controller: 'admin/movies', action: 'create'} do |i| %>
-  <% if @movie.errors.any? %>
-    <p>Error</p>
-    <ul>
-      <% @movie.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
-  <% end %>
+
+  <% render 'error' %>
 
   <%= label :name, '映画タイトル' %>
   <%= i.text_field :name %>
