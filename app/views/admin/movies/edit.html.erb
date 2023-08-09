@@ -25,5 +25,6 @@
   <br>
 
   <%= i.submit %>
-  <br>
 <% end %>
+<%= link_to '削除', admin_movie_path(@movie), method: :delete, data: {confilm: '本当に削除しますか？'}, class: 'btn del-btn' %>
+<br>
