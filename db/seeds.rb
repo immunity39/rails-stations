@@ -25,3 +25,15 @@ sheet = Sheet.create([{column: 2, row: 'c'}])
 sheet = Sheet.create([{column: 3, row: 'c'}])
 sheet = Sheet.create([{column: 4, row: 'c'}])
 sheet = Sheet.create([{column: 5, row: 'c'}])
+
+
+movie1 = Movie.find(1)
+schedule = Schedule.create([{movie: movie1, start_time: Time.parse('10:00'), end_time: Time.parse('12:00')}])
+schedule = Schedule.create([{movie: movie1, start_time: Time.parse('14:00'), end_time: Time.parse('16:00')}])
+schedule = Schedule.create([{movie: movie1, start_time: Time.parse('18:00'), end_time: Time.parse('20:00')}])
+
+movie2 = Movie.find(2)
+schedule = Schedule.create([{movie: movie2, start_time: Time.parse('12:30'), end_time: Time.parse('15:30')}])
+
+movie3 = Movie.find(3)
+schedule = Schedule.create([{movie: movie3, start_time: Time.parse('16:30'), end_time: Time.parse('18:30')}])
