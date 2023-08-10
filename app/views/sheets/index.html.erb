@@ -1,0 +1,17 @@
+<h1>座席情報</h1>
+
+<table>
+  <tr>
+    <td>ID</td>
+    <td>Column</td>
+    <td>Row</td>
+  </tr>
+
+  <% @sheet.each do |set| %>
+  <tr>
+    <td><%= set.id %></td>
+    <td><%= set.column %></td>
+    <td><%= set.row %></td>
+  </tr>
+  <% end %>
+</table>
