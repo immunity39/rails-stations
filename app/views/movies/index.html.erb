@@ -1,5 +1,22 @@
 <h1>ユーザー情報 index</h1>
 
+<%= form_tag movies_path, method: :get do%>
+  <label>ワード検索</label>
+  <%= text_field_tag :keyword, params[:keyword] %>
+  <br>
+
+  <label>上映情報</label>
+  <%= radio_button_tag :is_showing, '', params[:is_showing] == '', id: 'show_all' %>
+  <%= label_tag 'show_all', 'All' %>
+  <%= radio_button_tag :is_showing, '1', params[:is_showing] == '1', id: 'showing' %>
+  <%= label_tag 'showing', 'Showing' %>
+  <%= radio_button_tag :is_showing, '0', params[:is_showing] == '0', id: 'upcoming' %>
+  <%= label_tag 'upcoming', 'Upcoming' %>
+
+  <%= submit_tag "検索" %>
+  <br>
+<% end %>
+
 <table>
   <tr>
     <td>映画タイトル</td>
