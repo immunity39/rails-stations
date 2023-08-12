@@ -1,0 +1,8 @@
+<% if @schedule.errors.any? %>
+  <p>Error</p>
+  <ul>
+    <% @schedule.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>

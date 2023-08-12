@@ -1,29 +1,29 @@
 <h1>新規登録</h1>
 
-<%= form_with model: @movie, url: {controller: 'admin/movies', action: 'create'} do |i| %>
+<%= form_with(model: @movie, url: admin_movies_path, local: true) do |f| %>
 
-  <% render 'error' %>
+  <% render 'shared/error_messages', object: @movie %>
 
-  <%= label :name, '映画タイトル' %>
-  <%= i.text_field :name %>
+  <%= f.label :name, '映画タイトル' %>
+  <%= f.text_field :name %>
   <br>
 
-  <%= label :year, '公開年' %>
-  <%= i.number_field :year %>
+  <%= f.label :year, '公開年' %>
+  <%= f.number_field :year %>
   <br>
 
-  <%= label :is_showing, '上映中か' %>
-  <%= i.check_box :is_showing %>
+  <%= f.label :is_showing, '上映中か' %>
+  <%= f.check_box :is_showing %>
   <br>
 
-  <%= label :description, '概要' %>
-  <%= i.text_area :description %>
+  <%= f.label :description, '概要' %>
+  <%= f.text_area :description %>
   <br>
 
-  <%= label :image_url, '画像URL' %>
-  <%= i.text_field :image_url %>
+  <%= f.label :image_url, '画像URL' %>
+  <%= f.text_field :image_url %>
   <br>
 
-  <%= i.submit %>
+  <%= f.submit %>
   <br>
 <% end %>

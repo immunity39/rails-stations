@@ -1,0 +1,14 @@
+<h1>スケジュール情報 admin</h1>
+
+<% @movie.each do |mv| %>
+  <% if mv.schedules.any? %>
+    <h2><%= link_to mv.name, admin_movie_path(mv) %></h2>
+    <ul>
+      <% mv.schedules.each do |mvs| %>
+        <li>
+          <%= link_to "#{mvs.start_time} - #{mvs.end_time}", edit_admin_schedule_path(mvs) %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+<% end %>

@@ -3,11 +3,16 @@ class MoviesController < ApplicationController
     @movie = Movie.all
 
     if params[:keyword].present?
-      @movie = @movie.search_by_word(params[:keyword])
+      keyword = params[:keyword].strip
+      @movie = @movie.where("name LIKE ? OR description LIKE ?", "%#{keyword}%", "%#{keyword}%")
     end
 
     if params[:is_showing].present?
-      @movie = params[:is_showing] == "1" ? @movie.showing : @movie.upcoming
+      if params[:is_showing] == '1'
+        @movie = @movie.where(is_showing: true)
+      elsif params[:is_showing] == '0'
+        @movie = @movie.where(is_showing: false)
+      end
     end
   end
 

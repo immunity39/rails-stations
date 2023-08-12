@@ -1,0 +1,18 @@
+<h1>スケジュール登録</h1>
+
+<%= form_with(model: [@movie_id, @schedule], url: admin_movie_schedules_path(@movie_id)) do |f| %>
+  <%= f.label :movie_id, '映画ID' %>
+  <%= f.number_field :movie_id %>
+  <br>
+
+  <%= f.label :start_time, '上映開始時間' %>
+  <%= f.time_field :start_time %>
+  <br>
+
+  <%= f.label :end_time, '上映終了時間' %>
+  <%= f.time_field :end_time %>
+  <br>
+
+  <%= f.submit '登録' %>
+  <br>
+<% end %>

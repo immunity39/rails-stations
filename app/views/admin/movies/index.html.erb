@@ -2,13 +2,13 @@
 
 <table>
   <tr>
-    <td>id</td>
-    <td>タイトル</td>
+    <td>ID</td>
+    <td>映画タイトル</td>
     <td>公開年</td>
     <td>概要</td>
     <td>画像URL</td>
-    <td>上映中</td>
-    <td>登録日時</td>
+    <td>上映中か</td>
+    <td>作成日時</td>
     <td>更新日時</td>
   </tr>
 
@@ -18,7 +18,7 @@
       <td><%= mv.name %></td>
       <td><%= mv.year %></td>
       <td><%= mv.description %></td>
-      <td><%= link_to "画像", mv.image_url %></td>
+      <td><%= image_tag mv.image_url %></td>
       <td><%= mv_showing(mv.is_showing) %>
       <td><%= mv.created_at %></td>
       <td><%= mv.updated_at %></td>

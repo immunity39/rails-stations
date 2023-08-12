@@ -1,1 +1,17 @@
-<h1>show</h1>
+<h1>作品詳細</h1>
+
+<h2>作品名: <%= @movie.name %></h2>
+
+<% if @movie.schedules.present? %>
+  <p>上映スケジュール</p>
+  <% @movie.schedules.each do |schedule| %>
+    <%= link_to "#{schedule.start_time} - #{schedule.end_time}", new_admin_movie_schedule_path(@movie) %>
+    <br>
+  <% end %>
+<% else %>
+  <p>この作品には上映スケジュールがありません</p>
+  <br>
+<% end %>
+
+<%= link_to '新規スケジュール作成', new_admin_movie_schedule_path(@movie) %>
+<br>

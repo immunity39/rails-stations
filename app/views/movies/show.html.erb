@@ -1,15 +1,15 @@
 <h1><%= @movie.name %></h1>
 <p>
   ID:<%= @movie.id %><br>
-  公開:<%= @movie.year %>年<br>
-  説明:<%= @movie.description %><br>
-  <%= mv_showing(@movie.is_showing) %><br>
+  公開年:<%= @movie.year %><br>
+  概要:<%= @movie.description %><br>
+  <%= @movie.is_showing ? '上映中' : '上映予定' %>
   作成日時:<%= @movie.created_at %><br>
   更新日時:<%= @movie.updated_at %><br>
 </p>
-<img src="<%= @movie.image_url %>">
+<img src="<%= @movie.image_url %>" alt="<%= @movie.name %>">
 
-<p>上映スケジュール</p>
+<h2>上映スケジュール</h2>
 <table>
   <tr>
     <td>ID</td>

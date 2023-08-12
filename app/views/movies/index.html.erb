@@ -6,12 +6,12 @@
   <br>
 
   <label>上映情報</label>
-  <%= radio_button_tag :is_showing, '', params[:is_showing] == '', id: 'show_all' %>
-  <%= label_tag 'show_all', 'All' %>
-  <%= radio_button_tag :is_showing, '1', params[:is_showing] == '1', id: 'showing' %>
-  <%= label_tag 'showing', 'Showing' %>
-  <%= radio_button_tag :is_showing, '0', params[:is_showing] == '0', id: 'upcoming' %>
-  <%= label_tag 'upcoming', 'Upcoming' %>
+  <%= radio_button_tag :is_showing, 'all', params[:is_showing] == 'all' %>
+  <%= label_tag 'is_showing_all', '全て' %>
+  <%= radio_button_tag :is_showing, '1', params[:is_showing] == '1' %>
+  <%= label_tag 'is_showing_current', '公開中' %>
+  <%= radio_button_tag :is_showing, '0', params[:is_showing] == '0' %>
+  <%= label_tag 'is_showing_upcoming', '公開予定' %>
 
   <%= submit_tag "検索" %>
   <br>
@@ -19,6 +19,7 @@
 
 <table>
   <tr>
+    <td>ID</td>
     <td>映画タイトル</td>
     <td>公開年度</td>
     <td>概要</td>
@@ -30,6 +31,7 @@
 
   <% @movie.each do |mv| %>
     <tr>
+      <td><%= mv.id %></td>
       <td><%= mv.name %></td>
       <td><%= mv.year %></td>
       <td><%= mv.description %></td>
