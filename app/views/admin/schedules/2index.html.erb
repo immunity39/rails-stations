@@ -1,0 +1,26 @@
+<h1>スケジュール情報 admin</h1>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>映画タイトル</th>
+    <th>作品ID</th>
+    <th>映画開始時刻</th>
+    <th>映画終了時刻</th>
+    <th>作成日時</th>
+    <th>更新日時</th>
+  </tr>
+  <% @schedule.each do |schedule| %>
+  <tr>
+    <th><%= link_to schedule.id, edit_admin_schedule_path(schedule) %></th>
+    <th><%= schedule.movie.name %></th>
+    <th><%= schedule.movie.id %></th>
+    <th><%= schedule.start_time %></th>
+    <th><%= schedule.end_time %></th>
+    <th><%= schedule.created_at %></th>
+    <th><%= schedule.updated_at %></th>
+  </tr>
+  <% end %>
+</table>
+
+<%= link_to '作品一覧', admin_movies_path %>
